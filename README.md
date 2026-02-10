@@ -16,6 +16,6 @@ Personal portfolio site showcasing my work as an AI Engineer — RAG pipelines, 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
 
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Live-3fb950?style=for-the-badge)](https://neehanthreddym.github.io/portfolio)
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Live-3fb950?style=for-the-badge)](https://neehanthreddym.github.io/portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/neehanthreddy)
-[![Gmail](https://img.shields.io/badge/Gmail-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:neehanthreddym@gmail.com)
+<a href="mailto:neehanthreddym@gmail.com"><img src="https://img.shields.io/badge/Gmail-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a>
