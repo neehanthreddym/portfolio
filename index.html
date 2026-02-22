@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -74,54 +74,59 @@
       <div class="container">
         <h2 class="section-badge">Featured System</h2>
         <h3 class="system-title">Sentinel - AI News Intelligence</h3>
+        <p class="system-tagline">
+          An automated, AI-driven news aggregation and synthesis platform.</p>
 
         <div class="sentinel-grid">
           <div class="sentinel-content">
             <div class="feature-block">
-              <h4>Problem</h4>
-              <p>Information overload is a constant challenge. Traditional news aggregators simply pull in headlines,
-                offering volume without context or synthesis. They fail to understand nuance, connect related
-                narratives, or provide a reliable way to interact deeply with complex subjects without hallucinating
-                facts.</p>
+              <h4>Overview</h4>
+              <p>Sentinel tackles information overload by automatically synthesizing news from diverse sources into
+                cohesive daily digests. Its stateful, multi-agent LLM workflow guarantees that summaries are accurate,
+                structured, and unbiased.</p>
             </div>
             <div class="feature-block">
-              <h4>Solution</h4>
-              <p>Sentinel is a multi-agent AI system designed to solve this by clustering news articles, verifying
-                citations, and synthesizing cohesive narratives. Beyond basic aggregation, it allows users to actively
-                interrogate the news corpus using a precision-focused RAG pipeline, providing intelligent,
-                contextualized intelligence.</p>
+              <h4>System Architecture & Orchestration</h4>
+              <p>A cyclic, two-agent LangGraph workflow automates generation and quality control. The <strong>Researcher
+                  Agent</strong> drafts digests with strict JSON outputs, while the <strong>Editor Agent</strong> acts
+                as an automated guardrail, reviewing drafts for hallucinations and routing them for revision.</p>
             </div>
             <div class="feature-block">
-              <h4>System Architecture</h4>
-              <p>At its core, the system begins with robust data ingestion from external APIs, immediately followed by
-                semantic deduplication to ensure data quality. The processing is managed by a multi-agent workflow
-                consisting of a Researcher, Editor, and Publisher, each handling distinct phases of synthesis. Data is
-                securely stored using a hybrid approach—PostgreSQL for relational metadata and ChromaDB for vector
-                embeddings. The entire intelligence engine is exposed via a FastAPI backend, heavily utilizing Redis for
-                semantic caching to minimize latency. Everything is monitored with comprehensive observability tools to
-                track system health and agent decision-making.</p>
+              <h4>Engineering & Data Pipeline</h4>
+              <p>A robust pipeline scrapes clean HTML (<strong>NewsAPI</strong>, <strong>Trafilatura</strong>) with
+                strong <strong>Pydantic</strong> validation, stored in a <strong>PostgreSQL</strong> database. Ultra-low
+                latency inference is powered by the <strong>Groq API</strong>, with a custom event logger for full
+                system observability.</p>
             </div>
           </div>
           <div class="sentinel-sidebar">
             <div class="feature-block">
-              <h4>Key Engineering Challenges</h4>
+              <h4>Key Technical Achievements</h4>
               <ul>
-                <li>Deduplication across diverse news sources</li>
-                <li>Preventing hallucinated citations</li>
-                <li>Latency optimization using Redis semantic caching</li>
-                <li>Cost tracking & intelligent rate limiting</li>
+                <li>Multi-Agent Orchestration (LangGraph)</li>
+                <li>High-Speed LLM Inference (Groq)</li>
+                <li>Robust Data Extraction (trafilatura)</li>
+                <li>Strong Data Validation (Pydantic)</li>
+                <li>Custom Tracing & Observability</li>
               </ul>
             </div>
             <div class="feature-block">
               <h4>Tech Stack</h4>
               <div class="stack-tags">
-                <span class="tag">Python</span>
+                <span class="tag">Python 3.13</span>
                 <span class="tag">LangGraph / LangChain</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">PostgreSQL / ChromaDB</span>
-                <span class="tag">Redis</span>
-                <span class="tag">Docker / AWS</span>
+                <span class="tag">Groq API</span>
+                <span class="tag">PostgreSQL / asyncpg</span>
+                <span class="tag">SQLAlchemy / Alembic</span>
+                <span class="tag">Pydantic</span>
+                <span class="tag">NewsAPI / Trafilatura</span>
+                <span class="tag">Pytest / uv</span>
               </div>
+            </div>
+            <div class="feature-block">
+              <h4>Source Code</h4>
+              <a href="https://github.com/neehanthreddym/sentinel_ai_news" target="_blank" class="btn btn-secondary"
+                style="margin-top: 0.5rem;"><i class="fab fa-github"></i> Repository</a>
             </div>
             <!-- <div class="feature-block">
               <h4>What I Learned</h4>

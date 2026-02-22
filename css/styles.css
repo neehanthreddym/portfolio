@@ -304,10 +304,6 @@ section {
   filter: grayscale(0%) contrast(100%);
 }
 
-/* .about-image img:hover {
-  filter: grayscale(0%) contrast(100%);
-} */
-
 /* ========== Sentinel Featured Project ========== */
 .featured-project {
   background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 100%);
@@ -320,6 +316,14 @@ section {
   margin-bottom: var(--space-xl);
 }
 
+.system-tagline {
+  margin-top: -1.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  max-width: 800px;
+}
+
 .sentinel-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -330,10 +334,6 @@ section {
   .sentinel-grid {
     grid-template-columns: 3fr 2fr;
   }
-}
-
-.feature-block {
-  margin-bottom: var(--space-lg);
 }
 
 .feature-block h4 {
@@ -376,6 +376,17 @@ section {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.sentinel-sidebar .feature-block {
+  margin-bottom: 0;
+}
+
+.sentinel-sidebar .feature-block {
+  margin-bottom: 0;
 }
 
 .stack-tags {
