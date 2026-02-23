@@ -327,12 +327,6 @@ section {
   margin-top: 2rem;
 }
 
-.education h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: var(--color-text);
-}
-
 .education-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--color-border);
@@ -398,7 +392,6 @@ section {
   border-radius: var(--radius-lg);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--color-border);
-  filter: grayscale(20%) contrast(110%);
   filter: grayscale(0%) contrast(100%);
 }
 
@@ -519,10 +512,6 @@ section {
   margin-bottom: 0;
 }
 
-.sentinel-sidebar .feature-block {
-  margin-bottom: 0;
-}
-
 .stack-tags {
   display: flex;
   flex-wrap: wrap;
@@ -539,11 +528,6 @@ section {
 .projects-header h2 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-}
-
-.projects-header p {
-  font-size: 1.1rem;
-  color: var(--color-text-muted);
 }
 
 .project-filters {
@@ -715,11 +699,6 @@ section {
   font-size: 2rem;
   max-width: 600px;
   margin: 0 auto 1rem auto;
-}
-
-.contact-container p {
-  max-width: 500px;
-  margin: 0 auto var(--space-lg) auto;
 }
 
 .contact-links {
