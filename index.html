@@ -36,7 +36,6 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#sentinel">Featured</a></li>
           <li><a href="#projects">Work</a></li>
           <li><a href="#contact" class="btn-hire">Hire Me!</a></li>
         </ul>
@@ -156,84 +155,6 @@
       </div>
     </section>
 
-    <!-- SENTINEL PROJECT -->
-    <section id="sentinel" class="featured-project">
-      <div class="container">
-        <h2 class="section-badge">Featured System</h2>
-        <h3 class="system-title" style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-          Sentinel - AI News Intelligence
-          <span
-            style="font-size: 0.75rem; font-weight: 600; color: #f59e0b; background: rgba(245, 158, 11, 0.1); padding: 0.3rem 0.8rem; border-radius: var(--radius-full); border: 1px solid rgba(245, 158, 11, 0.2); letter-spacing: 0.05em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.4rem;"><i
-              class="fas fa-tools"></i> In Progress</span>
-        </h3>
-        <p class="system-tagline">
-          An automated, AI-driven news aggregation and synthesis platform.</p>
-
-        <div class="sentinel-grid">
-          <div class="sentinel-content">
-            <div class="feature-block">
-              <h4>Overview</h4>
-              <p>Sentinel tackles information overload by automatically synthesizing news from diverse sources into
-                cohesive daily digests. Its stateful, multi-agent LLM workflow guarantees that summaries are accurate,
-                structured, and unbiased.</p>
-            </div>
-            <div class="feature-block">
-              <h4>System Architecture & Orchestration</h4>
-              <p>A cyclic, two-agent LangGraph workflow automates generation and quality control. The
-                <strong>Researcher
-                  Agent</strong> drafts digests with strict JSON outputs, while the <strong>Editor Agent</strong> acts
-                as an automated guardrail, reviewing drafts for hallucinations and routing them for revision.
-              </p>
-            </div>
-            <div class="feature-block">
-              <h4>Engineering & Data Pipeline</h4>
-              <p>A robust pipeline scrapes clean HTML (<strong>NewsAPI</strong>, <strong>Trafilatura</strong>) with
-                strong <strong>Pydantic</strong> validation, stored in a <strong>PostgreSQL</strong> database.
-                Ultra-low
-                latency inference is powered by the <strong>Groq API</strong>, with a custom event logger for full
-                system observability.</p>
-            </div>
-          </div>
-          <div class="sentinel-sidebar">
-            <div class="feature-block">
-              <h4>Key Technical Achievements</h4>
-              <ul>
-                <li>Stateful Agentic Workflow (LangGraph)</li>
-                <li>Asynchronous Ingestion Pipeline</li>
-                <li>Deterministic LLM Outputs</li>
-                <li>Automated Integration Testing</li>
-                <li>Schema Evolution & Observability</li>
-              </ul>
-            </div>
-            <div class="feature-block">
-              <h4>Tech Stack</h4>
-              <div class="stack-tags">
-                <span class="tag">Python 3.13</span>
-                <span class="tag">LangGraph / LangChain</span>
-                <span class="tag">Groq API</span>
-                <span class="tag">PostgreSQL / asyncpg</span>
-                <span class="tag">SQLAlchemy / Alembic</span>
-                <span class="tag">Pydantic</span>
-                <span class="tag">NewsAPI / Trafilatura</span>
-                <span class="tag">Pytest / uv</span>
-              </div>
-            </div>
-            <div class="feature-block">
-              <h4>Source Code</h4>
-              <a href="https://github.com/neehanthreddym/sentinel_ai_news" target="_blank" class="btn btn-secondary"
-                style="margin-top: 0.5rem;"><i class="fab fa-github"></i> Repository</a>
-            </div>
-            <!-- <div class="feature-block">
-              <h4>What I Learned</h4>
-              <p>Developing this system deepened my understanding of effective agent design—specifically, how to bound
-                agent responsibilities to ensure predictable outcomes. It highlighted the intricacies of tuning RAG
-                pipelines for high precision. Most importantly, it reinforced that system reliability and observability
-                are arguably more critical than the model itself when facing real-world production AI tradeoffs.</p>
-            </div> -->
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- OTHER PROJECTS -->
     <section id="projects" class="projects">
