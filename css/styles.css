@@ -995,28 +995,140 @@ section {
   color: var(--color-text);
 }
 
+/* ========== Leadership & Community Compact List ========== */
+.leadership-list {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) var(--space-lg);
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+/* Subtle accent top-border to visually separate from job cards */
+.leadership-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--space-lg);
+  right: var(--space-lg);
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(59, 130, 246, 0.35) 30%,
+      rgba(139, 92, 246, 0.35) 70%,
+      transparent);
+}
+
+.leadership-list-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: var(--space-md);
+}
+
+.leadership-list-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+/* Hairline divider after the label */
+.leadership-list-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* List reset */
+.leadership-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.leadership-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  align-items: start;
+}
+
+.leadership-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.leadership-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.leadership-role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.leadership-org {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  letter-spacing: 0.01em;
+}
+
+.leadership-item-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.leadership-dates {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
+.leadership-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Mobile: stack to single column */
+@media (max-width: 600px) {
+  .leadership-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
 /* ---- MOBILE ---- */
 @media (max-width: 768px) {
   .exp-layout {
-    grid-template-columns: 10px 1fr;
+    grid-template-columns: 1fr;
     gap: var(--space-sm);
   }
 
+  /* Hide the timeline track — dates are already on each card pill */
   .exp-track {
-    position: relative;
-    top: auto;
-  }
-
-  .exp-track-line {
-    left: 50%;
-  }
-
-  .exp-node-year {
     display: none;
-  }
-
-  .exp-date-node {
-    margin-bottom: 0;
   }
 
   .exp-card-header {
@@ -1042,7 +1154,6 @@ section {
 
 /* ========== Footer ========== */
 .footer {
-  text-align: center;
   padding: var(--space-md) 0;
   border-top: 1px solid var(--color-border);
   background: var(--color-surface);
@@ -1452,7 +1563,7 @@ section {
 }
 
 .terminal-cmd {
-  color: #e2e8f0;
+  color: var(--color-text);
   font-weight: 500;
 }
 
