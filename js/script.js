@@ -22,26 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filterValue = btn.getAttribute('data-filter');
-
-            projectCards.forEach(card => {
-                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'flex';
-                    card.style.animation = 'none';
-                    // Trigger reflow for animation
-                    card.offsetHeight;
-                    card.style.animation = 'fadeIn 0.5s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+    function applyFilter(btn) {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filterValue = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+            if (card.getAttribute('data-category') === filterValue) {
+                card.style.display = 'flex';
+                card.style.animation = 'none';
+                card.offsetHeight;
+                card.style.animation = 'fadeIn 0.5s ease forwards';
+            } else {
+                card.style.display = 'none';
+            }
         });
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => applyFilter(btn));
     });
+
+    // Activate the first filter button on load
+    if (filterBtns.length) applyFilter(filterBtns[0]);
 
     // Mobile navigation toggle
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
@@ -51,13 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', () => {
             navLinks.classList.toggle('nav-active');
+            document.body.classList.toggle('nav-open');
             const icon = mobileNavToggle.querySelector('i');
             if (navLinks.classList.contains('nav-active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
+                mobileNavToggle.setAttribute('aria-label', 'Close navigation');
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                mobileNavToggle.setAttribute('aria-label', 'Open navigation');
             }
         });
 
@@ -66,9 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', () => {
                 if (navLinks.classList.contains('nav-active')) {
                     navLinks.classList.remove('nav-active');
+                    document.body.classList.remove('nav-open');
                     const icon = mobileNavToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
+                    mobileNavToggle.setAttribute('aria-label', 'Open navigation');
                 }
             });
         });
