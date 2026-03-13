@@ -93,7 +93,7 @@ h6 {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-sm);
 }
 
 section {
@@ -200,6 +200,8 @@ section {
   color: var(--color-primary);
   font-size: 0.8rem;
   flex-shrink: 0;
+  width: 1em;
+  height: 1em;
 }
 
 /* ========== Header & Nav ========== */
@@ -383,6 +385,20 @@ section {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.hero-role {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: var(--radius-full);
+  padding: 0.4rem 1.1rem;
+  margin-bottom: var(--space-md);
 }
 
 .hero-subtitle {
@@ -648,7 +664,6 @@ section {
 }
 
 .project-card .card-footer {
-  margin-top: auto;
   padding-top: 1.2rem;
   display: flex;
   justify-content: space-between;
@@ -1325,66 +1340,6 @@ section {
   }
 }
 
-/* ========== Hero Writing Pills ========== */
-.hero-writing {
-  margin-top: var(--space-lg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.hero-writing-label {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.hero-writing-links {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.writing-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1.1rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-full);
-  transition: all 0.25s ease;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.writing-pill:hover {
-  color: var(--color-text);
-  background: rgba(59, 130, 246, 0.08);
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 0 14px rgba(59, 130, 246, 0.15);
-  transform: translateY(-2px);
-}
-
-.writing-pill--substack:hover {
-  background: rgba(255, 109, 0, 0.08);
-  border-color: rgba(255, 109, 0, 0.4);
-  box-shadow: 0 0 14px rgba(255, 109, 0, 0.15);
-}
-
-.writing-pill-icon {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-
 /* ========== Writing & Publications Section ========== */
 .writing {
   padding: var(--space-2xl) 0;
@@ -1592,11 +1547,6 @@ section {
 
   .writing-cards {
     grid-template-columns: 1fr;
-  }
-
-  .hero-writing-links {
-    flex-direction: column;
-    align-items: center;
   }
 }
 
