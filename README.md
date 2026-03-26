@@ -1,10 +1,5 @@
 # Neehanth Reddy — AI & ML Engineer Portfolio (v2.0)
 
-![Status](https://img.shields.io/badge/Status-Live-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-blue)
-<a href="https://neehanth.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/🌐_Portfolio-Live-3fb950?style=for-the-badge" alt="Portfolio"></a>
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/neehanthreddy)
-
 Welcome to the **v2 redesign** of my personal portfolio. This space is dedicated to showcasing my work as an AI Engineer specializing in **RAG pipelines, LLM agents, scalable ML systems, and robust Data Science backends**.
 
 ## 🚀 The v2 Redesign
