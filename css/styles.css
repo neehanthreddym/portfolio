@@ -169,7 +169,7 @@ html.lenis body {
 /* Generic Card */
 .sys-card {
   padding: 2rem;
-  }
+}
 
 .sys-card:hover {
   border-color: var(--border-focus);
@@ -532,6 +532,10 @@ html.lenis body {
 }
 
 /* --- 8. CAPABILITIES SECTION --- */
+#capabilities {
+  min-height: auto;
+}
+
 .domain-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -732,26 +736,26 @@ html.lenis body {
   color: var(--accent-secondary);
 }
 
-/* --- 10. EXPERIENCE SECTION --- */
+/* --- 10. EXPERIENCE SECTION / SYSTEM LOGS --- */
 .timeline-container {
   position: relative;
-  max-width: 800px;
-  margin-bottom: 4rem;
+  max-width: 850px;
+  margin-bottom: 2rem;
 }
 
 .timeline-line {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 16px;
+  left: 17px;
   width: 2px;
-  background: var(--border-subtle);
+  background: linear-gradient(to bottom, var(--accent-primary-glow) 0%, rgba(59, 130, 246, 0.1) 60%, transparent 100%);
 }
 
 .timeline-item {
   position: relative;
-  padding-left: 3rem;
-  padding-bottom: 3rem;
+  padding-left: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .timeline-item:last-child {
@@ -761,60 +765,124 @@ html.lenis body {
 .timeline-node {
   position: absolute;
   left: 11px;
-  top: 5px;
-  width: 12px;
-  height: 12px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
+  background: var(--bg-base);
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary-glow);
+  z-index: 1;
+  transition: all var(--transition-normal);
+}
+
+.timeline-item:hover .timeline-node {
   background: var(--accent-primary);
-  border: 2px solid var(--bg-base);
+  box-shadow: 0 0 15px var(--accent-primary);
 }
 
-.timeline-date {
+.timeline-node.secondary {
+  border-color: var(--text-muted);
+  box-shadow: none;
+}
+
+.timeline-item:hover .timeline-node.secondary {
+  background: var(--text-muted);
+}
+
+.sys-timestamp {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.sys-milestone-card:hover .sys-timestamp {
   color: var(--accent-secondary);
-  margin-bottom: 0.5rem;
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
-.timeline-header {
-  margin-bottom: 0.5rem;
+.milestone-header {
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.5rem;
 }
 
-.timeline-header h3 {
-  margin-bottom: 0.2rem;
-  font-size: 1.2rem;
+.role-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-primary);
+}
+
+.org-loc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .timeline-org {
   font-family: var(--font-mono);
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  color: var(--text-primary);
 }
 
 .timeline-loc {
-  font-size: 0.85rem;
-  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
 }
 
-.timeline-bullets {
-  padding-left: 1.2rem;
+.sys-log-entries {
+  padding: 0;
   margin-bottom: 1.5rem;
+  list-style: none;
 }
 
-.timeline-bullets li {
+.sys-log-entries li {
+  margin-bottom: 1.5rem;
   font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-  list-style-type: square;
 }
 
-.timeline-bullets li::marker {
+.sys-log-entries li:last-child {
+  margin-bottom: 0;
+}
+
+.log-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.log-label.accent {
   color: var(--accent-primary);
 }
 
-.bullet-highlight {
-  color: var(--text-primary);
-  font-weight: 500;
+.milestone-impact {
+  background: rgba(59, 130, 246, 0.03);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  transition: background var(--transition-fast);
+}
+
+.milestone-impact p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.sys-milestone-card:hover .milestone-impact {
+  background: rgba(59, 130, 246, 0.06);
 }
 
 .timeline-tech {
@@ -829,28 +897,45 @@ html.lenis body {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-muted);
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
 }
 
-.leadership-block {
-  max-width: 800px;
-}
-
+/* Branch / Leadership Node */
 .leadership-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
-  margin-top: 1.5rem;
 }
 
-.lead-item h4 {
+@media (min-width: 600px) {
+  .leadership-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lead-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.6rem;
+}
+
+.lead-header h4 {
   font-size: 1.05rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.lead-dates {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 .lead-org {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin-bottom: 0.8rem;
 }
 
@@ -859,12 +944,13 @@ html.lenis body {
   margin: 0;
 }
 
-.lead-dates {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 0.3rem;
+.leadership-node .sys-milestone-card {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.leadership-node:hover .sys-milestone-card {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* --- 11. CREDENTIALS SECTION --- */
@@ -1120,6 +1206,11 @@ html.lenis body {
 /* --- 16. RESPONSIVE DESIGN --- */
 @media (max-width: 900px) {
 
+  .sys-hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
   .hero-split,
   .about-split {
     grid-template-columns: 1fr;
@@ -1140,20 +1231,6 @@ html.lenis body {
 
   .leadership-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  :root {
-    --section-padding: 4rem;
   }
 
   /* Mobile Nav */
@@ -1194,6 +1271,20 @@ html.lenis body {
     transform: translateY(0);
     opacity: 1;
     pointer-events: all;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  :root {
+    --section-padding: 4rem;
   }
 }
 
