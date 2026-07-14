@@ -326,6 +326,14 @@ li {
   transform: translateY(-3px);
 }
 
+.hero-badges img.facilitator-badge {
+  transform: scale(1.35);
+}
+
+.hero-badges img.facilitator-badge:hover {
+  transform: scale(1.35) translateY(-3px);
+}
+
 .hero-card {
   padding: 26px;
   border: 1px solid var(--line-strong);
