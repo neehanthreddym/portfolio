@@ -282,7 +282,8 @@ li {
   margin-top: 30px;
 }
 
-.hero-tags span {
+.hero-tags span,
+.hero-tags a.hero-tag-link {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.035);
   color: var(--muted);
@@ -290,7 +291,18 @@ li {
   padding: 7px 11px;
   font-family: var(--mono);
   font-size: 0.78rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
+
+.hero-tags a.hero-tag-link:hover,
+.hero-tags a.hero-tag-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
 
 .hero-badges {
   display: flex;
